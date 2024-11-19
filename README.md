@@ -55,7 +55,7 @@ Este é um sistema interativo para explorar os últimos commits e melhorias da *
 ## ✨ Demonstração
 
 ### Página Inicial:
-![Página Inicial]([https://via.placeholder.com/800x400?text=P%C3%A1gina+Inicial](https://prnt.sc/9Zl4yTJxTmDM))
+![Página Inicial](https://prnt.sc/9Zl4yTJxTmDM)
 
 ---
 
