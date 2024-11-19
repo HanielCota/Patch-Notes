@@ -1,0 +1,228 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif; /* Fonte Custom */
+}
+
+/* Body Styling */
+body {
+  background-color: #0f0f0f; /* Obsidian Black */
+  color: #ffffff; /* Texto Branco */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Altura total da tela */
+  padding: 20px; /* Espaçamento para telas menores */
+  text-align: center; /* Centraliza texto */
+}
+
+/* Patch Notes Container */
+.patch-notes-container {
+  position: relative; /* Define o contexto de posicionamento */
+  max-width: 800px;
+  width: 100%;
+  text-align: center;
+  background-color: #121212; /* Preto mais claro */
+  border-radius: 12px;
+  padding: 20px 0; /* Remove padding lateral do topo */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+  overflow-y: hidden; /* Controla o overflow vertical */
+  max-height: 70vh; /* Altura máxima para listas grandes */
+  display: flex;
+  flex-direction: column; /* Para alinhar verticalmente */
+}
+
+.content-top {
+  position: sticky; /* Permite que o elemento fique "grudado" ao topo */
+  top: 0; /* Mantém no topo */
+  z-index: 10; /* Garante que fique acima do conteúdo */
+  background-color: #121212; /* Fundo igual ao container */
+  padding: 20px;
+  border-bottom: 1px solid #333; /* Adiciona uma linha divisória */
+}
+
+#notes-container {
+  flex: 1; /* Permite que este elemento ocupe o espaço restante */
+  overflow-y: auto; /* Ativa a rolagem vertical */
+  padding: 20px; /* Espaçamento interno */
+  margin-top: 10px; /* Espaço extra para separação */
+}
+
+#notes-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+#notes-container::-webkit-scrollbar-thumb {
+  background-color: #444;
+  border-radius: 4px;
+}
+
+#notes-container::-webkit-scrollbar-track {
+  background-color: #1e1e1e;
+}
+
+/* Header */
+.header {
+  margin-bottom: 30px;
+}
+
+.logo {
+  width: 120px; /* Tamanho alternativo para header */
+  margin-bottom: 15px;
+}
+
+/* Navigation Buttons */
+.nav-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.nav-button {
+  background-color: #ff5722; /* Laranja vibrante */
+  color: #ffffff; /* Branco */
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease; /* Animação suave */
+}
+
+.nav-button:disabled {
+  background-color: #333; /* Cinza escuro */
+  cursor: not-allowed;
+}
+
+.nav-button:hover:not(:disabled) {
+  background-color: #e64a19; /* Laranja escuro */
+}
+
+.home-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ff5722;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  padding: 5px 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.home-button:hover {
+  background-color: #e64a19;
+}
+
+.home-button i {
+  pointer-events: none;
+  font-size: 1.4rem;
+}
+
+/* Seções de Notas */
+.notes-section {
+  display: none; /* Esconde todas as seções por padrão */
+}
+
+.notes-section.active {
+  display: block; /* Mostra apenas a seção ativa */
+}
+
+.notes {
+  list-style: none; /* Remove marcadores da lista */
+  padding: 0;
+  margin: 0;
+}
+
+.notes li {
+  padding: 10px 15px;
+  border-bottom: 1px solid #333; /* Linhas entre os itens */
+  font-size: 0.9rem;
+  text-align: left; /* Texto alinhado à esquerda */
+  transition: background-color 0.3s ease;
+}
+
+.notes li:last-child {
+  border-bottom: none; /* Remove a linha do último item */
+}
+
+.notes li:hover {
+  background-color: #292929; /* Fundo mais claro no hover */
+}
+
+.notes li strong {
+  color: #ff5722; /* Destaque nos números */
+  margin-right: 8px; /* Espaçamento entre número e texto */
+}
+
+/* Scrollbar Customization */
+.patch-notes-container::-webkit-scrollbar {
+  width: 8px; /* Largura da barra de rolagem */
+}
+
+.patch-notes-container::-webkit-scrollbar-thumb {
+  background-color: #444; /* Cor da barra */
+  border-radius: 4px; /* Bordas arredondadas */
+}
+
+.patch-notes-container::-webkit-scrollbar-track {
+  background-color: #1e1e1e; /* Fundo da barra */
+}
+
+/* Botão "Back to Top" */
+.back-to-top {
+  display: none; /* Esconde inicialmente */
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #ff5722; /* Laranja vibrante */
+  color: #ffffff; /* Branco */
+  border: none;
+  border-radius: 50%; /* Botão circular */
+  width: 50px;
+  height: 50px;
+  font-size: 1.5rem; /* Aumenta o tamanho do ícone */
+  text-align: center;
+  line-height: 50px; /* Centraliza verticalmente o ícone */
+  cursor: pointer; /* Indica clique */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Sombra do botão */
+  z-index: 100; /* Sempre acima dos outros elementos */
+  transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+/* Efeito Hover no Botão "Back to Top" */
+.back-to-top:hover {
+  background-color: #e64a19; /* Laranja mais escuro */
+  transform: scale(1.1); /* Aumenta ligeiramente */
+}
+
+.back-to-top:active {
+  transform: scale(0.95); /* Reduz ligeiramente */
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+  .patch-notes-container {
+    padding: 15px;
+  }
+
+  .nav-button {
+    font-size: 0.9rem;
+    padding: 8px 16px;
+  }
+
+  .notes li {
+    font-size: 0.85rem; /* Texto menor na lista */
+  }
+
+  .back-to-top {
+    width: 40px; /* Botão menor */
+    height: 40px;
+    font-size: 1rem;
+  }
+}
