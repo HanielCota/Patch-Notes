@@ -52,10 +52,21 @@ Este é um sistema interativo para explorar os últimos commits e melhorias da *
 
 ---
 
+Aqui está a seção corrigida e formatada adequadamente:
+
+---
+
 ## ✨ Demonstração
 
 ### Página Inicial:
-![Página Inicial]![image](https://github.com/user-attachments/assets/810dc28d-3c78-4a96-8d96-03ec351e38a6)
+![Página Inicial](https://github.com/user-attachments/assets/810dc28d-3c78-4a96-8d96-03ec351e38a6)
+
+### Exemplo de Commit:
+![Exemplo de Commit](https://github.com/user-attachments/assets/d82b1adb-95c5-43c5-a8b6-512aba04e40d)
+
+---
+
+Agora, os títulos e as imagens estão bem formatados para uma exibição organizada no seu README. 😊
 
 
 ---
