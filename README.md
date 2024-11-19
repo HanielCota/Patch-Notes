@@ -55,7 +55,8 @@ Este é um sistema interativo para explorar os últimos commits e melhorias da *
 ## ✨ Demonstração
 
 ### Página Inicial:
-![Página Inicial](https://prnt.sc/9Zl4yTJxTmDM)
+![Página Inicial]![image](https://github.com/user-attachments/assets/810dc28d-3c78-4a96-8d96-03ec351e38a6)
+
 
 ---
 
