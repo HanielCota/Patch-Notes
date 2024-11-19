@@ -302,71 +302,90 @@ const notes = [
   "Add advanced debugging tools for plugins",
 ];
 
-// Configuração das seções
-const ITEMS_PER_SECTION = 50; // Itens por seção
+// Configuration for sectioning
+const ITEMS_PER_SECTION = 50;
 const sections = [];
+
+// Divide the notes into sections
 for (let i = 0; i < notes.length; i += ITEMS_PER_SECTION) {
   sections.push(notes.slice(i, i + ITEMS_PER_SECTION));
 }
 
-// Renderização das seções no DOM
+// Ensure DOM elements exist before proceeding
 const notesContainer = document.getElementById("notes-container");
-sections.forEach((section, index) => {
-  const sectionDiv = document.createElement("div");
-  sectionDiv.className = `notes-section${index === 0 ? " active" : ""}`;
-  sectionDiv.innerHTML = `
-    <ul class="notes">
-      ${section
-        .map(
-          (note, i) =>
-            `<li><strong>${
-              index * ITEMS_PER_SECTION + i + 1
-            }.</strong> ${note}</li>`
-        )
-        .join("")}
-    </ul>
-  `;
-  notesContainer.appendChild(sectionDiv);
-});
-
-// Controle de navegação entre seções
-let currentSection = 0;
 const prevButton = document.getElementById("prev-section");
 const nextButton = document.getElementById("next-section");
+const backToTopButton = document.getElementById("back-to-top");
+
+if (!notesContainer || !prevButton || !nextButton || !backToTopButton) {
+  console.error("Required DOM elements are missing.");
+}
+
+// Render sections in the DOM
+const renderSections = () => {
+  sections.forEach((section, index) => {
+    const sectionDiv = document.createElement("div");
+    sectionDiv.className = `notes-section${index === 0 ? " active" : ""}`;
+    sectionDiv.innerHTML = `
+      <ul class="notes">
+        ${section
+          .map(
+            (note, i) =>
+              `<li><strong>${
+                index * ITEMS_PER_SECTION + i + 1
+              }.</strong> ${note}</li>`
+          )
+          .join("")}
+      </ul>
+    `;
+    notesContainer.appendChild(sectionDiv);
+  });
+};
+
+renderSections();
+
+let currentSection = 0;
 
 const updateSections = () => {
-  document.querySelectorAll(".notes-section").forEach((section, index) => {
+  const sectionsInDom = document.querySelectorAll(".notes-section");
+  sectionsInDom.forEach((section, index) => {
     section.classList.toggle("active", index === currentSection);
   });
+
   prevButton.disabled = currentSection === 0;
   nextButton.disabled = currentSection === sections.length - 1;
 };
 
-prevButton.addEventListener("click", () => {
-  if (currentSection > 0) {
-    currentSection--;
-    updateSections();
-  }
-});
-
-nextButton.addEventListener("click", () => {
-  if (currentSection < sections.length - 1) {
-    currentSection++;
-    updateSections();
-  }
-});
-
-// Funcionalidade do botão "Back to Top"
-const backToTopButton = document.getElementById("back-to-top");
-
-window.addEventListener("scroll", () => {
-  backToTopButton.style.display = window.scrollY > 200 ? "block" : "none";
-});
-
-// Rolagem suave para o topo ao clicar no botão
-backToTopButton.addEventListener("click", () => {
-  window.scrollTo({
-    top: 0,
-    behavior: "smooth", // Rolagem suave
+if (prevButton && nextButton) {
+  prevButton.addEventListener("click", () => {
+    if (currentSection > 0) {
+      currentSection--;
+      updateSections();
+    }
   });
-});
+
+  nextButton.addEventListener("click", () => {
+    if (currentSection < sections.length - 1) {
+      currentSection++;
+      updateSections();
+    }
+  });
+}
+
+// Smooth scroll functionality for "Back to Top" button
+if (backToTopButton) {
+  backToTopButton.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  });
+
+  // Show "Back to Top" button only when scrolling past a certain point
+  window.addEventListener("scroll", () => {
+    backToTopButton.style.display = window.scrollY > 200 ? "block" : "none";
+  });
+}
+
+// Initial update for section controls
+updateSections();
