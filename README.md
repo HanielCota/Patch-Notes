@@ -59,7 +59,8 @@ Aqui está a seção corrigida e formatada adequadamente:
 ## ✨ Demonstração
 
 ### Página Inicial:
-![Página Inicial](https://github.com/user-attachments/assets/810dc28d-3c78-4a96-8d96-03ec351e38a6)
+![Página Inicial](https://github.com/user-attachments/assets/6e7902a2-5e16-40d4-a9f8-5dfee24661ba)
+
 
 ### Exemplo de Commit:
 ![Exemplo de Commit](https://github.com/user-attachments/assets/d82b1adb-95c5-43c5-a8b6-512aba04e40d)
