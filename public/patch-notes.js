@@ -300,6 +300,11 @@ const notes = [
   "Refactor sea lantern lighting mechanics",
   "Optimize wolf attack behavior",
   "Add advanced debugging tools for plugins",
+  "Changed gradlew line endings to fix Docker build",
+  "Use more up to date JDK Docker image",
+  "Expose UDP port by default",
+  "Don't ask for language on first Docker run",
+  "No git submodules are used anymore", 
 ];
 
 // Configuration for sectioning
