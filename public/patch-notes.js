@@ -304,7 +304,10 @@ const notes = [
   "Use more up to date JDK Docker image",
   "Expose UDP port by default",
   "Don't ask for language on first Docker run",
-  "No git submodules are used anymore", 
+  "No git submodules are used anymore",
+  "Remove chunk save reattempt patch"
+  "Use Player view distance for PlayerNaturallySpawnCreaturesEvent"
+  "Copy items when constructing ClientboundSetCursorItemPacket"
 ];
 
 // Configuration for sectioning
