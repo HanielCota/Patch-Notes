@@ -307,7 +307,9 @@ const notes = [
   "No git submodules are used anymore",
   "Remove chunk save reattempt patch",
   "Use Player view distance for PlayerNaturallySpawnCreaturesEvent",
-  "Copy items when constructing ClientboundSetCursorItemPacket",
+  "Copy items when constructing ClientboundSetCursorItemPacket"
+  "Fix broken joml metadata resulting in kotlin being included on compile/runtime classpath",
+  "More moving around of hunks"
 ];
 
 // Configuration for sectioning
