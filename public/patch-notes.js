@@ -310,6 +310,8 @@ const notes = [
   "Copy items when constructing ClientboundSetCursorItemPacket",
   "Fix broken joml metadata resulting in kotlin being included on compile/runtime classpath",
   "More moving around of hunks",
+  "Fix/scoreboard delegate",
+  "added functions in ClientboundPlayerInfoUpdatePacket",
 ];
 
 // Configuration for sectioning
