@@ -311,6 +311,7 @@ const notes = [
   "Fix broken joml metadata resulting in kotlin being included on compile/runtime classpath",
   "More moving around of hunks",
   "Fix/scoreboard delegate",
+  "Added functions in ClientboundPlayerInfoUpdatePacket", 
 ];
 
 // Configuration for sectioning
