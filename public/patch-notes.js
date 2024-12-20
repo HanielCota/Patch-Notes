@@ -312,6 +312,7 @@ const notes = [
   "More moving around of hunks",
   "Fix/scoreboard delegate",
   "Added functions in ClientboundPlayerInfoUpdatePacket", 
+  "Fix issues with async cooldown",
 ];
 
 // Configuration for sectioning
